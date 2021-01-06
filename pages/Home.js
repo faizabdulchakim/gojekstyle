@@ -9,6 +9,8 @@ import Tab1 	from '../pages/Promo';
 import Tab2		from '../pages/Beranda';
 import Tab3		from '../pages/Chat';
 
+
+
 const screenHeight = Math.round(Dimensions.get('window').height);
 
 

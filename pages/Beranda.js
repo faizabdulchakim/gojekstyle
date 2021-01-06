@@ -20,6 +20,7 @@ export default class Beranda extends React.Component {
 		this.activesheetbtm_		= this.activesheetbtm_.bind(this);
 		this.handleInnerPressIn_	= this.handleInnerPressIn_.bind(this);
 		this.handleInnerPressOut_	= this.handleInnerPressOut_.bind(this);
+		this.pressHandle_			= this.pressHandle_.bind(this);
 	}
 	
 	componentDidMount(){
@@ -57,6 +58,11 @@ export default class Beranda extends React.Component {
 		this.props.lockTab(false);
 	}
 	
+	pressHandle_(parameter){
+		var param_ = {"title":parameter}
+		Actions.Landing_page(param_);
+	}
+	
 
 	renderContent(){
 		return(
@@ -74,30 +80,42 @@ export default class Beranda extends React.Component {
 					onScrollEndDrag={this.handlescroll_}
 				>
 
+							
 							<InputGroup style={{borderBottomWidth:0}}>
 								<Icon name="ios-search" style={{backgroundColor:'#D9D9D9',height:40,fontSize:20,padding:10,borderBottomLeftRadius:20,borderTopLeftRadius:20,color:'grey'}}/>
-								<Input placeholder="Search" style={{height:40,fontSize:15,padding:10,backgroundColor:'#D9D9D9',borderBottomRightRadius:20,borderTopRightRadius:20}} />
+								<Input  placeholder="Search" style={{height:40,fontSize:15,padding:10,backgroundColor:'#D9D9D9',borderBottomRightRadius:20,borderTopRightRadius:20}} />
 								<Icon name="ios-people" style={{color:'green'}} />
 							</InputGroup>
+							
 							<Card  transparent style={{marginTop:15}} >
 								<CardItem style={{backgroundColor:'#abcabc',borderRadius:10}}>                        
 									<View style={{flexDirection:'row'}}>
-										<View style={{flex:2,backgroundColor:'white',borderRadius:5}}>
-											<Text style={{fontWeight:'bold',marginLeft:10,fontSize:15,marginTop:10}}><Icon name="ios-wallet" style={{fontSize:15,color:'green',marginTop:10}} />Saldo</Text>
-											<Text style={{fontWeight:'bold',marginLeft:10,fontSize:16}}>Rp 10.000</Text>
-											<Text  style={{fontWeight:'bold',marginLeft:10,fontSize:10,color:'green',marginBottom:10}}>Klik & Check riwayat</Text>
+										<View style={{flex:2,backgroundColor:'white',borderRadius:5}} >
+											<TouchableOpacity onPress={()=>this.pressHandle('Saldo')}>
+												<View>
+												<Text style={{fontWeight:'bold',marginLeft:10,fontSize:15,marginTop:10}}><Icon name="ios-wallet" style={{fontSize:15,color:'green',marginTop:10}} />Saldo</Text>
+												<Text style={{fontWeight:'bold',marginLeft:10,fontSize:16}}>Rp 10.000</Text>
+												<Text  style={{fontWeight:'bold',marginLeft:10,fontSize:10,color:'green',marginBottom:10}}>Klik & Check riwayat</Text>
+												</View>
+											</TouchableOpacity>
 										</View>
 										<View style={{flex:1,justifyContent: 'center'}}>
-											<Text style={styles.trioIcon_}><Icon name="ios-cloud-upload-outline" style={styles.trioIcon} /></Text>
-											<Text style={styles.trioIcon_}>Bayar</Text>
+											<TouchableOpacity onPress={()=>this.pressHandle('Bayar')}>
+												<Text style={styles.trioIcon_}><Icon name="ios-cloud-upload-outline" style={styles.trioIcon} /></Text>
+												<Text style={styles.trioIcon_}>Bayar</Text>
+											</TouchableOpacity>
 										</View>
 										<View style={{flex:1,justifyContent: 'center'}}>
-											<Text style={styles.trioIcon_}><Icon name="ios-add-circle-outline" style={styles.trioIcon} /></Text>
-											<Text style={styles.trioIcon_}>Topup</Text>
+											<TouchableOpacity onPress={()=>this.pressHandle('Topup')}>
+												<Text style={styles.trioIcon_}><Icon name="ios-add-circle-outline" style={styles.trioIcon} /></Text>
+												<Text style={styles.trioIcon_}>Topup</Text>
+											</TouchableOpacity>
 										</View>
 										<View style={{flex:1,justifyContent: 'center'}}>
-											<Text style={styles.trioIcon_}><Icon name="ios-code-working-outline" style={styles.trioIcon} /></Text>
-											<Text style={styles.trioIcon_}>Explor</Text>
+											<TouchableOpacity onPress={()=>this.pressHandle('Explore')}>
+												<Text style={styles.trioIcon_}><Icon name="ios-code-working-outline" style={styles.trioIcon} /></Text>
+												<Text style={styles.trioIcon_}>Explor</Text>
+											</TouchableOpacity>
 										</View>
 									</View>
 								</CardItem>
@@ -132,66 +150,86 @@ export default class Beranda extends React.Component {
 										>
 										<View style={{flexDirection:'row'}}>
 											<Card  transparent >
+												
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FEE7B4'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 1')}>
 													<Text>
 													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
+												
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FECE5F'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 2')}>
 													<Text>
-													2
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FEE7B4'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 3')}>
 													<Text>
-													3
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FECE5F'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 4')}>
 													<Text>
-													4
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FEE7B4'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 5')}>
 													<Text>
-													5
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FECE5F'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 6')}>
 													<Text>
-													6
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FEE7B4'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 7')}>
 													<Text>
-													7
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FECE5F'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 8')}>
 													<Text>
-													8
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FEE7B4'}]} >
+													<TouchableOpacity onPress={()=>this.pressHandle('Konten buat kamu 9')}>
 													<Text>
-													9
+													Hold & Swipe left-right
 													</Text>
+													</TouchableOpacity>
 												</CardItem>
 											</Card>
 											
@@ -214,21 +252,29 @@ export default class Beranda extends React.Component {
 									paddingTop: 0,
 									paddingBottom: 0}}
 							   >
-									<Text style={styles.headerCard}>Biar kamu nyaman</Text>
+									<Text style={styles.headerCard}>Menu terbaru</Text>
 								</CardItem>
 							</Card>
 							<Card  transparent >
 								<CardItem style={[styles.verticalcard,{backgroundColor:'#aabbcc'}]}>
-									<Text>Lorem ipsum</Text>
+									<TouchableOpacity onPress={()=>this.pressHandle('Menu terbaru 1')}>
+										<Text>Lorem ipsum</Text>
+									</TouchableOpacity>
 								</CardItem>
 								<CardItem style={[styles.verticalcard,{backgroundColor:'#bbccaa'}]}>
-									<Text>Lorem ipsum</Text>
+									<TouchableOpacity onPress={()=>this.pressHandle('Menu terbaru 2')}>
+										<Text>Lorem ipsum</Text>
+									</TouchableOpacity>
 								</CardItem>
 								<CardItem style={[styles.verticalcard,{backgroundColor:'#ccaabb'}]}>
-									<Text>Lorem ipsum</Text>
+									<TouchableOpacity onPress={()=>this.pressHandle('Menu terbaru 3')}>
+										<Text>Lorem ipsum</Text>
+									</TouchableOpacity>
 								</CardItem>
 								<CardItem style={[styles.verticalcard,{backgroundColor:'#abcabc'}]}>
-									<Text>Lorem ipsum</Text>
+									<TouchableOpacity onPress={()=>this.pressHandle('Menu terbaru 4')}>
+										<Text>Lorem ipsum</Text>
+									</TouchableOpacity>
 								</CardItem>
 							</Card>
 
@@ -253,6 +299,7 @@ export default class Beranda extends React.Component {
 					activesheetbtm={this.activesheetbtm_}
 					handleInnerPressIn={this.handleInnerPressIn_}
 					handleInnerPressOut={this.handleInnerPressOut_}
+					pressHandle={this.pressHandle_}
 					
 					
 					onOpenStart={this.onOpenStart_}
