@@ -12,9 +12,30 @@ import Tab3		from '../pages/Chat';
 const screenHeight = Math.round(Dimensions.get('window').height);
 
 
-export default Home = (props) => {
+//export default Home = (props) => {
+export default class Home extends React.Component {
+	constructor(props) {
+        super(props);
+		this.state = {
+			isLocked:false
+		}
+		this.settablock = this.settablock.bind(this);
+	}
+	
+	componentDidMount(){
+		
+	}
+	
+	settablock(x){
+		//alert(x)
+		this.setState({
+				isLocked: x
+			}, function(){
+			});
+			
+	}
 
-  
+  render(){
   return (
 	<View style={{flex: 1,flexDirection: 'column',backgroundColor:'#92F111'}}>
 		<View style={{height:StatusBar.currentHeight}}>
@@ -26,28 +47,29 @@ export default Home = (props) => {
 		<View style={{height:(screenHeight)}}>
 			<Container  >
 				<Tabs 
+				locked={this.state.isLocked}
 				tabBarUnderlineStyle={{ backgroundColor:'white',height:30,marginBottom:10,borderRadius:10,opacity: 0.7 }} 
 				tabContainerStyle={{
 				  elevation:0
 				}}  
 				>
 					<Tab heading="Promo" tabStyle={{backgroundColor: '#92F111',height:50}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}  >
-						<Tab1 tabstatus={true} 	/>
+						<Tab1 tabstatus={true} lockTab={this.settablock} 	/>
 					</Tab>
 
-					<Tab heading="Home" tabStyle={{backgroundColor: '#92F111'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}>
-						<Tab2 tabstatus={false} 	/>
+					<Tab heading="Home"  tabStyle={{backgroundColor: '#92F111'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}>
+						<Tab2 tabstatus={false}  lockTab={this.settablock}	/>
 					</Tab>
 
-					<Tab heading="Chat" tabStyle={{backgroundColor: '#92F111'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}>
-						<Tab3 tabstatus={false} 	/>
+					<Tab heading="Chat"  tabStyle={{backgroundColor: '#92F111'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}>
+						<Tab3 tabstatus={false} lockTab={this.settablock} 	/>
 					</Tab>
 				</Tabs>
 			</Container>
 		</View>
 	</View>
   )
-  
+  }
 }
 
 
