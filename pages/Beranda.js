@@ -74,12 +74,12 @@ export default class Beranda extends React.Component {
 					onScrollEndDrag={this.handlescroll_}
 				>
 
-							<InputGroup>
-								<Icon name="ios-search" />
-								<Input placeholder="Search"/>
-								<Icon name="ios-people" />
+							<InputGroup style={{borderBottomWidth:0}}>
+								<Icon name="ios-search" style={{backgroundColor:'#D9D9D9',height:40,fontSize:20,padding:10,borderBottomLeftRadius:20,borderTopLeftRadius:20,color:'grey'}}/>
+								<Input placeholder="Search" style={{height:40,fontSize:15,padding:10,backgroundColor:'#D9D9D9',borderBottomRightRadius:20,borderTopRightRadius:20}} />
+								<Icon name="ios-people" style={{color:'green'}} />
 							</InputGroup>
-							<Card  transparent >
+							<Card  transparent style={{marginTop:15}} >
 								<CardItem style={{backgroundColor:'#abcabc',borderRadius:10}}>                        
 									<View style={{flexDirection:'row'}}>
 										<View style={{flex:2,backgroundColor:'white',borderRadius:5}}>
@@ -87,14 +87,17 @@ export default class Beranda extends React.Component {
 											<Text style={{fontWeight:'bold',marginLeft:10,fontSize:16}}>Rp 10.000</Text>
 											<Text  style={{fontWeight:'bold',marginLeft:10,fontSize:10,color:'green',marginBottom:10}}>Klik & Check riwayat</Text>
 										</View>
-										<View style={{flex:1}}>
-											<Text>Bayar</Text>
+										<View style={{flex:1,justifyContent: 'center'}}>
+											<Text style={styles.trioIcon_}><Icon name="ios-cloud-upload-outline" style={styles.trioIcon} /></Text>
+											<Text style={styles.trioIcon_}>Bayar</Text>
 										</View>
-										<View style={{flex:1}}>
-											<Text>Topup</Text>
+										<View style={{flex:1,justifyContent: 'center'}}>
+											<Text style={styles.trioIcon_}><Icon name="ios-add-circle-outline" style={styles.trioIcon} /></Text>
+											<Text style={styles.trioIcon_}>Topup</Text>
 										</View>
-										<View style={{flex:1}}>
-											<Text>Explor</Text>
+										<View style={{flex:1,justifyContent: 'center'}}>
+											<Text style={styles.trioIcon_}><Icon name="ios-code-working-outline" style={styles.trioIcon} /></Text>
+											<Text style={styles.trioIcon_}>Explor</Text>
 										</View>
 									</View>
 								</CardItem>
@@ -131,7 +134,7 @@ export default class Beranda extends React.Component {
 											<Card  transparent >
 												<CardItem  style={[styles.generalCard,{backgroundColor:'#FEE7B4'}]} >
 													<Text>
-													1
+													Hold & Swipe left-right
 													</Text>
 												</CardItem>
 											</Card>
@@ -284,6 +287,16 @@ const styles = {
 		borderRadius:10,
 		marginTop:10,
 		justifyContent: 'center'
+	},
+	trioIcon:{
+		fontSize:15,
+		marginTop:10,
+		color:'white'
+	},
+	trioIcon_:{
+		textAlign:'center',
+		color:'white',
+		fontSize:12
 	}
 };
 
