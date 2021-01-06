@@ -16,7 +16,7 @@ export default Home = (props) => {
 
   
   return (
-	<View style={{flex: 1,flexDirection: 'column',backgroundColor:'red'}}>
+	<View style={{flex: 1,flexDirection: 'column',backgroundColor:'#92F111'}}>
 		<View style={{height:StatusBar.currentHeight}}>
 			{
 				/*just statusbar space*/
@@ -24,17 +24,22 @@ export default Home = (props) => {
 		</View>
 	
 		<View style={{height:(screenHeight)}}>
-			<Container>
-				<Tabs   >
-					<Tab heading="Promo" tabStyle={{backgroundColor: '#35c4f9'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#104883'}}  >
+			<Container  >
+				<Tabs 
+				tabBarUnderlineStyle={{ backgroundColor:'white',height:30,marginBottom:10,borderRadius:10,opacity: 0.7 }} 
+				tabContainerStyle={{
+				  elevation:0
+				}}  
+				>
+					<Tab heading="Promo" tabStyle={{backgroundColor: '#92F111',height:50}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}  >
 						<Tab1 tabstatus={true} 	/>
 					</Tab>
 
-					<Tab heading="Home" tabStyle={{backgroundColor: '#35c4f9'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#104883'}}>
+					<Tab heading="Home" tabStyle={{backgroundColor: '#92F111'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}>
 						<Tab2 tabstatus={false} 	/>
 					</Tab>
 
-					<Tab heading="Chat" tabStyle={{backgroundColor: '#35c4f9'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#104883'}}>
+					<Tab heading="Chat" tabStyle={{backgroundColor: '#92F111'}} textStyle={{color: '#fff'}}  activeTabStyle={{backgroundColor: '#92F111'}}>
 						<Tab3 tabstatus={false} 	/>
 					</Tab>
 				</Tabs>
